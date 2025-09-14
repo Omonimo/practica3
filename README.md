@@ -56,3 +56,4 @@ La documentación generada por JavaDoc la pueden consultar aquí:
 
 [Documentación generada por JavaDoc para la práctica
 3](https://aztlan.fciencias.unam.mx/~canek/2026-1-icc/practica3/apidocs/index.html)
+# practica3
