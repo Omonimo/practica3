@@ -82,7 +82,7 @@ public class ListaEstudiante {
      */
     public boolean esVacia() {
         // Aquí va su código.
-	return this.cabeza == null && this.rabo == null;
+	return this.cabeza == null && this.rabo == null
     }
 
     /**
@@ -93,19 +93,10 @@ public class ListaEstudiante {
      */
     public void agregaFinal(Estudiante elemento) {
         // Aquí va su código.
-                if (elemento == null) {
-            return;
-        }
-        Nodo n = new Nodo(elemento);
-        longitud++;
-        if (rabo == null) {
-            cabeza = rabo = n;
-        } else {
-            rabo.siguiente = n;
-            n.anterior = rabo;
-            rabo = n;
-        }
-
+	if(rabo == null){
+	  
+	    
+	} retr
     }
 
     /**
@@ -116,19 +107,6 @@ public class ListaEstudiante {
      */
     public void agregaInicio(Estudiante elemento) {
         // Aquí va su código.
-                if (elemento == null) {
-            return;
-        }
-        Nodo n = new Nodo(elemento);
-        longitud++;
-        if (cabeza == null) {
-            cabeza = rabo = n;
-        } else {
-            cabeza.anterior = n;
-            n.siguiente = cabeza;
-            cabeza = n;
-        }
-
     }
 
     /**
@@ -147,7 +125,6 @@ public class ListaEstudiante {
      */
     public void inserta(int i, Estudiante elemento) {
         // Aquí va su código.
-
     }
 
     /**
@@ -157,7 +134,6 @@ public class ListaEstudiante {
      */
     public void elimina(Estudiante elemento) {
         // Aquí va su código.
-
     }
 
     /**
@@ -167,18 +143,6 @@ public class ListaEstudiante {
      */
     public Estudiante eliminaPrimero() {
         // Aquí va su código.
-        Nodo n = this.cabeza;
-        if (n == null) {
-            return null;
-        } else if (n != null && n.siguiente == null) {
-            this.cabeza = null;
-            this.rabo = null;
-            return n.elemento;
-        } else {
-            this.cabeza = this.cabeza.siguiente;
-            this.cabeza.anterior = null;
-            return n.elemento;
-        }
     }
 
     /**
@@ -188,20 +152,6 @@ public class ListaEstudiante {
      */
     public Estudiante eliminaUltimo() {
         // Aquí va su código.
-        Nodo n = this.rabo;
-        if (n == null) {
-            return null;
-        } else if (n != null && n.anterior == null) {
-            this.cabeza = null;
-            this.rabo = null;
-            longitud--;
-            return n.elemento;
-        } else {
-            this.rabo = this.rabo.anterior;
-            this.rabo.siguiente = null;
-            longitud--;
-            return n.elemento;
-        }
     }
 
     /**
@@ -220,12 +170,6 @@ public class ListaEstudiante {
      */
     public ListaEstudiante reversa() {
         // Aquí va su código.
-        ListaEstudiante copia = new ListaEstudiante();
-        Nodo n = cabeza;
-
-        //caso base cuando rabo es igual a la cabeza
-
-        //caso recursivo, recorrer la liusta en regreso
     }
 
     /**
@@ -251,10 +195,6 @@ public class ListaEstudiante {
      */
     public Estudiante getPrimero() {
         // Aquí va su código.
-        if (cabeza == null) {
-            return null;
-        }
-        return cabeza.elemento;
     }
 
     /**
@@ -264,11 +204,6 @@ public class ListaEstudiante {
      */
     public Estudiante getUltimo() {
         // Aquí va su código.
-        Nodo n = rabo;
-        if (n == null) {
-            return null;
-        }
-        return n.elemento;
     }
 
     /**
@@ -308,8 +243,6 @@ public class ListaEstudiante {
      */
     public boolean equals(ListaEstudiante lista) {
         // Aquí va su código.
-
-
     }
 
     /**
@@ -318,7 +251,6 @@ public class ListaEstudiante {
      */
     public Nodo getCabeza() {
         // Aquí va su código.
-        return cabeza;
     }
 
     /**
@@ -327,6 +259,5 @@ public class ListaEstudiante {
      */
     public Nodo getRabo() {
         // Aquí va su código.
-        return rabo;
     }
 }
