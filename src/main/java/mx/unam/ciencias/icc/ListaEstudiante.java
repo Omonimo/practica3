@@ -238,16 +238,9 @@ public class ListaEstudiante {
      * @return una nueva lista que es la reversa la que manda llamar el método.
      */
     public ListaEstudiante reversa() {
-        // Aquí va su código.
         ListaEstudiante reversa = new ListaEstudiante();
         Nodo n = rabo;
-
-        //caso base cuando rabo es igual a la cabeza
-        if (n == null){
-            return reversa;
-        }
-        //caso recursivo, recorrer la liusta en regreso
-        else {
+        while (n != null) {
             reversa.agregaFinal(n.elemento);
             n = n.anterior;
         }
