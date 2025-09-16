@@ -148,6 +148,16 @@ public class ListaEstudiante {
     public void inserta(int i, Estudiante elemento) {
         // Aquí va su código.
 
+        // caso base
+
+        if(i <= 0)
+            agregaInicio(elemento);
+        if(i >= 0){
+            agregaFinal(elemento);
+        }
+
+
+
     }
 
     /**
@@ -157,6 +167,9 @@ public class ListaEstudiante {
      */
     public void elimina(Estudiante elemento) {
         // Aquí va su código.
+        if (elemento == null || esVacia())
+            return;
+
 
     }
 
@@ -212,6 +225,12 @@ public class ListaEstudiante {
      */
     public boolean contiene(Estudiante elemento) {
         // Aquí va su código.
+        // condicion de salida, elemento es igual a elemento de lista
+        //caso recursivo es elemento es distinto de lista
+        Nodo n = cabeza;
+        if(elemento.equals(n.elemento))
+            return true;
+        else contiene(elemento.equals(n.siguiente));
     }
 
     /**
@@ -220,12 +239,20 @@ public class ListaEstudiante {
      */
     public ListaEstudiante reversa() {
         // Aquí va su código.
-        ListaEstudiante copia = new ListaEstudiante();
-        Nodo n = cabeza;
+        ListaEstudiante reversa = new ListaEstudiante();
+        Nodo n = rabo;
 
         //caso base cuando rabo es igual a la cabeza
-
+        if (n == null){
+            return reversa;
+        }
         //caso recursivo, recorrer la liusta en regreso
+        else {
+            reversa.agregaFinal(n.elemento);
+            n = n.anterior;
+        }
+        return reversa;
+    
     }
 
     /**
@@ -235,6 +262,11 @@ public class ListaEstudiante {
      */
     public ListaEstudiante copia() {
         // Aquí va su código.
+        ListaEstudiante copia = new ListaEstudiante();
+        Nodo n = cabeza;
+        if (n != null)
+            copia.agregaFinal(n.elemento);
+        return copia;
     }
 
     /**
@@ -242,6 +274,17 @@ public class ListaEstudiante {
      */
     public void limpia() {
         // Aquí va su código.
+        Nodo viajero = cabeza;
+        if (viajero != null) {
+            n. elemento = null;
+            viajero = viajero.siguiente;
+            longitud--;
+        }
+        else {
+            cabeza = null;
+            rabo = null;
+            longitud = 0;
+        }
     }
 
     /**
@@ -280,6 +323,17 @@ public class ListaEstudiante {
      */
     public Estudiante get(int i) {
         // Aquí va su código.
+        Nodo n = cabeza;
+        int contador = 0;
+        if(i < 0 || i >= getLongitud())
+            return null;
+        
+        if(contador == i)
+            return n.elemento;
+        else {
+            n = n.siguiente;
+            contador++;
+        }
     }
 
     /**
@@ -290,6 +344,8 @@ public class ListaEstudiante {
      */
     public int indiceDe(Estudiante elemento) {
         // Aquí va su código.
+        
+
     }
 
     /**
@@ -308,6 +364,11 @@ public class ListaEstudiante {
      */
     public boolean equals(ListaEstudiante lista) {
         // Aquí va su código.
+        //condicion de salida, rabos de lista iguales
+        // caso recursivo los elementos son iguales
+        if (list.elemento ==)
+            return true;
+        if
 
 
     }
